@@ -57,7 +57,6 @@ pymysql
 ```
 
 ```shell
-# 插件
 $ pip install playwright-pytest
 ```
 

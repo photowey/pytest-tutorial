@@ -1,0 +1,3 @@
+tests/test_file.py
+tests/test_mod.py::TestClass
+-m slow

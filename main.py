@@ -37,9 +37,14 @@ def clean_tmp_dir(target_path):
                 os.remove(sub_file)
 
 
+class MyPlugin:
+    def pytest_sessionfinish(self):
+        print("--- test run reporting finishing ---")
+
+
 if __name__ == '__main__':
     # warning::it's dangerous
     clean_tmp_dir('./tmp')
 
-    pytest.main()
+    pytest.main(["-qq"], plugins=[MyPlugin()])
     os.system('allure generate ./tmp -o ./report --clean')
